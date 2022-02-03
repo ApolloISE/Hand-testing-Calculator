@@ -14,7 +14,7 @@ namespace CalculatorTest
         [TestCase(2,5,7)]
         [TestCase(2, 7, 9)]
         [TestCase(1, 0, 1)]
-        [TestCase(7, 3, 10)]
+        [TestCase(8, 3, 11)]
         public void Add_Positive_And_Positive_Result_Positive(int a, int b,int result)
         {
             Assert.That(c.Add(a,b),Is.EqualTo(result));
