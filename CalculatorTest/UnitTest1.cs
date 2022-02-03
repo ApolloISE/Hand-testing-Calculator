@@ -15,7 +15,7 @@ namespace CalculatorTest
         [TestCase(2, 7, 9)]
         [TestCase(1, 0, 1)]
         [TestCase(7, 3, 10)]
-        public void Add2And5(int a, int b,int result)
+        public void Add_Positive_And_Positive_Result_Positive(int a, int b,int result)
         {
             Assert.That(c.Add(a,b),Is.EqualTo(result));
         }
@@ -24,7 +24,7 @@ namespace CalculatorTest
         [TestCase(2, 7, -5)]
         [TestCase(1, 0, 1)]
         [TestCase(7, 3, 4)]
-        public void Subtract2And5(int a, int b, int result)
+        public void Subtract_Positive_And_Positive_Result(int a, int b, int result)
         {
             Assert.That(c.Subtract(a, b), Is.EqualTo(result));
         }
@@ -33,7 +33,7 @@ namespace CalculatorTest
         [TestCase(2, 7, 14)]
         [TestCase(1, 0, 0)]
         [TestCase(7, 3, 21)]
-        public void Multiply2And5(int a, int b, int result)
+        public void Multiply_Positive_And_Positive_Result_Positive(int a, int b, int result)
         {
             Assert.That(c.Multiply(a, b), Is.EqualTo(result));
         }
@@ -42,7 +42,7 @@ namespace CalculatorTest
         [TestCase(2, 7, 128)]
         [TestCase(1, 0, 1)]
         [TestCase(7, 3, 343)]
-        public void Power2And5(int a, int b, int result)
+        public void Power_Positive_And_Positive_Result_Positive(int a, int b, int result)
         {
             Assert.That(c.Power(a, b), Is.EqualTo(result));
         }
