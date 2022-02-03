@@ -37,6 +37,18 @@ namespace Hand_testing_Calculator
             return Accumulator;
         }
 
+        public double Divide(double dividend, double divisor)
+        {
+            if (divisor != 0)
+            {
+                return dividend / divisor;
+            }
+            else
+            {
+                throw new ArgumentOutOfRangeException();
+            }
+        }
+
         public double Accumulator { get; private set; }
     }
 }
