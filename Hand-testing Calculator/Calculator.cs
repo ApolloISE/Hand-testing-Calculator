@@ -15,23 +15,28 @@ namespace Hand_testing_Calculator
 
         public double Add(double a, double b)
         {
-            return a + b;
+            Accumulator = a + b;
+            return Accumulator;
         }
 
         public double Subtract(double a, double b)
-        { 
-            return a - b;
+        {
+            Accumulator = a - b;
+            return Accumulator;
         }
 
         public double Multiply(double a, double b)
-        { 
-            return a * b; 
+        {
+            Accumulator = a * b;
+            return Accumulator; 
         }
 
         public double Power(double a, double b)
         {
-            return Math.Pow(a, b);
+            Accumulator = Math.Pow(a, b);
+            return Accumulator;
         }
 
+        public double Accumulator { get; private set; }
     }
 }
