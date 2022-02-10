@@ -66,7 +66,7 @@ namespace Hand_testing_Calculator
             }
             else
             {
-                throw new ArgumentOutOfRangeException();
+                throw new DivideByZeroException();
             }
         }
         public double Divide(double divisor)

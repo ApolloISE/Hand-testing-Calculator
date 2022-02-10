@@ -99,7 +99,7 @@ namespace CalculatorTest
 
         public void Division_By_Zero(double a)
         {
-            Assert.Throws<ArgumentOutOfRangeException>(() => uut.Divide(a,0));
+            Assert.Throws<DivideByZeroException>(() => uut.Divide(a,0));
         }
 
         [TestCase(6,2,3)]
@@ -136,18 +136,29 @@ namespace CalculatorTest
             Assert.That(uut.Divide(a, b), Is.EqualTo(result));
         }
 
-        [TestCase(-6, 2, -1.5)]
-        [TestCase(-100, 10, -1)]
-        [TestCase(-10, 100, -0.001)]
-        [TestCase(-12, 4, -0.75)]
-        [TestCase(-10.5, 2, -2.625)]
-        [TestCase(-1000, 5, -40)]
-
-        public void Division_Negative_And_Positive_Result_Negative_Accumulation(double a, double b, double result)
+        [TestCase(5,2)]
+        [TestCase(5.5,2.25)]
+        [TestCase(100,100000)]
+        public void Accumulator_Add_Two_Positive_Numbers_Get_Positive_Value(double a, double b)
         {
-            uut.Divide(a, b);
-            uut.Divide(b);
-            Assert.That(uut.Accumulator, Is.EqualTo(result));
+            //act
+            double x = uut.Add(a, b);
+            //Assert
+            Assert.That(x,Is.EqualTo(uut.Accumulator));
+        }
+
+
+        [TestCase(2,5,10,7)]
+        [TestCase(10,5,100,75)]
+        [TestCase(2,5,50,25)]
+        public void Accumulator_Do_Add_Operation_Then_Subtract_Operation_Happens_Then_Get_Accumulator_From_Last_Operation(double a, double b, double c, double d)
+        {
+            //act
+            uut.Add(a, b);
+            double result = uut.Subtract(c, d);
+
+            //assert
+            Assert.That(result,Is.EqualTo(uut.Accumulator));
         }
 
         [TestCase(5, 2)]
