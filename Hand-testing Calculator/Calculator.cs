@@ -18,6 +18,11 @@ namespace Hand_testing_Calculator
             return a + b;
         }
 
+        public double Add(double b)
+        {
+            return b + b;
+        }
+
         public double Subtract(double a, double b)
         { 
             return a - b;
@@ -29,6 +34,11 @@ namespace Hand_testing_Calculator
         }
 
         public double Power(double a, double b)
+        {
+            return Math.Pow(a, b);
+        }
+
+        public double Divide(double a, double b)
         {
             return Math.Pow(a, b);
         }
