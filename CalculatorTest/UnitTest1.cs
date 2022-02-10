@@ -83,6 +83,31 @@ namespace CalculatorTest
             Assert.That(uut.Divide(a, b), Is.EqualTo(result));
         }
 
+        [TestCase(5,2)]
+        [TestCase(5.5,2.25)]
+        [TestCase(100,100000)]
+        public void Accumulator_Add_Two_Positive_Numbers_Get_Positive_Value(double a, double b)
+        {
+            //act
+            double x = uut.Add(a, b);
+            //Assert
+            Assert.That(x,Is.EqualTo(uut.Accumulator));
+        }
+
+
+        [TestCase(2,5,10,7)]
+        [TestCase(10,5,100,75)]
+        [TestCase(2,5,50,25)]
+        public void Accumulator_Do_Add_Operation_Then_Subtract_Operation_Happens_Then_Get_Accumulator_From_Last_Operation(double a, double b, double c, double d)
+        {
+            //act
+            uut.Add(a, b);
+            double result = uut.Subtract(c, d);
+
+            //assert
+            Assert.That(result,Is.EqualTo(uut.Accumulator));
+        }
+
         [TestCase(5, 2)]
         [TestCase(-100, 15)]
         [TestCase(-7, -2.5)]
