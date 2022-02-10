@@ -58,7 +58,7 @@ namespace CalculatorTest
 
         public void Division_By_Zero(double a)
         {
-            Assert.Throws<ArgumentOutOfRangeException>(() => uut.Divide(a,0));
+            Assert.Throws<DivideByZeroException>(() => uut.Divide(a,0));
         }
 
         [TestCase(6,2,3)]
