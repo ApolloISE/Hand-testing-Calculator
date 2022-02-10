@@ -82,5 +82,15 @@ namespace CalculatorTest
         {
             Assert.That(uut.Divide(a, b), Is.EqualTo(result));
         }
+
+        [TestCase(5, 2)]
+        [TestCase(-100, 15)]
+        [TestCase(-7, -2.5)]
+        public void ClearAccumulator(double a, double b)
+        {
+            c.Multiply(a, b);
+            c.Clear();
+            Assert.That(c.Accumulator, Is.EqualTo(0));
+        }
     }
 }
