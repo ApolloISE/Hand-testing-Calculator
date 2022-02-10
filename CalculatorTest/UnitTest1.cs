@@ -73,6 +73,7 @@ namespace CalculatorTest
         [TestCase(-100, 10, -10)]
         [TestCase(-10, 100, -0.1)]
         [TestCase(-12, 3, -4)]
+        [TestCase( -10.5,2, -5.25)]
 
         public void Division_Negative_And_Positive_Result_Negative(double a, double b, double result)
         {
