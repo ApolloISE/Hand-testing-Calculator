@@ -21,8 +21,8 @@ namespace Hand_testing_Calculator
 
         public double Add(double b)
         {
-            Accumulator += b;
-            return Accumulator;
+            return Add(Accumulator, b);
+
         }
 
         public double Subtract(double a, double b)
@@ -32,8 +32,7 @@ namespace Hand_testing_Calculator
         }
         public double Subtract(double b)
         {
-            Accumulator -= b;
-            return Accumulator;
+            return Subtract(Accumulator, b);
         }
 
         public double Multiply(double a, double b)
@@ -44,8 +43,7 @@ namespace Hand_testing_Calculator
 
         public double Multiply(double b)
         {
-            Accumulator *= b;
-            return Accumulator;
+            return Multiply(Accumulator, b);
         }
 
         public double Power(double a, double b)
@@ -56,8 +54,7 @@ namespace Hand_testing_Calculator
 
         public double Power(double b)
         {
-            Accumulator = Math.Pow(Accumulator, b);
-            return Accumulator;
+            return Power(Accumulator, b);
         }
 
         public double Divide(double dividend, double divisor)
@@ -74,15 +71,7 @@ namespace Hand_testing_Calculator
         }
         public double Divide(double divisor)
         {
-            if (divisor != 0)
-            {
-                Accumulator = Accumulator / divisor;
-                return Accumulator;
-            }
-            else
-            {
-                throw new ArgumentOutOfRangeException();
-            }
+            return Divide(Accumulator, divisor);
         }
 
         public void Clear()
