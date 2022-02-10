@@ -88,9 +88,9 @@ namespace CalculatorTest
         [TestCase(-7, -2.5)]
         public void ClearAccumulator(double a, double b)
         {
-            c.Multiply(a, b);
-            c.Clear();
-            Assert.That(c.Accumulator, Is.EqualTo(0));
+            uut.Multiply(a, b);
+            uut.Clear();
+            Assert.That(uut.Accumulator, Is.EqualTo(0));
         }
     }
 }
